@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background-color: #eef2f3; }
+    .result-container { background: white; padding: 20px; margin: 50px auto; width: 70%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .result-container h1 { color: #333; }
+    .result-container img { border: 2px solid #ccc; border-radius: 8px; max-width: 100%; height: auto; }
+    .btn { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; }
+    .btn:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="result-container">
+    <h1>Prediction Result</h1>
+    <p style="font-size: 20px;"><strong>{{ predicted_class }}</strong> (Confidence: {{ confidence | round(2) }}%)</p>
+    <img src="{{ result_image }}" alt="Captured Image">
+    <br><br>
+    <a href="{{ url_for('index') }}" class="btn">Capture Another Image</a>
+  </div>
+</body>
+</html>
